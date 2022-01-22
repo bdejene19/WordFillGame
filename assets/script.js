@@ -176,29 +176,31 @@ const compareToHiddenWord = (event) => {
 updateRecord();
 
 
-// add keydown event to
+// add keydown event to register user input
 document.addEventListener('keydown', compareToHiddenWord);
 
-
+// set wins and losses on page load
 let wins = localStorage.getItem('wins');
 let losses = localStorage.getItem('losses');
 
 let winsCounter = document.getElementById('wins-count');
 let lossCounter = document.getElementById('loss-count');
 
+// resets user object wins and losses => then proceeds to update local storage with userRecord values
 const resetRecord = () => {
-    console.log('recpord working?')
     userRecord.wins = 0;
     userRecord.losses = 0;
 
     localStorage.setItem('wins', userRecord.wins);
     localStorage.setItem('losses',userRecord.losses );
 
+    // update UI with new local storage values 
     let winsCounter = document.getElementById('wins-count');
     let lossCounter = document.getElementById('loss-count');
 
     winsCounter.innerHTML = localStorage.getItem('wins');
     lossCounter.innerHTML = localStorage.getItem('losses')
-
 }
+
+// creating click event for reset button
 document.getElementById('reset-score').addEventListener('click', resetRecord);

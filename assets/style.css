@@ -152,7 +152,9 @@ section h2, section h3 {
 }
 
 
+/* beginning of media queries for responsiveness */
 @media screen and (max-width: 1200px) {
+    /* make blanks for hidden words smaller (to handle longer words) */
     #word-container span {
         font-size: 2rem;
     }
@@ -164,23 +166,30 @@ section h2, section h3 {
         height: fit-content;
         padding: 5em 0;
     }
+
+    /* change game display to column as screens get smaller */
     section {
         flex-direction: column;
         row-gap: 3em;
     }
 
+    /* make game rules/reset at the top */
     .play-game {
         order: 1;
     }
 
+    /* set empty blanks below */
     #game-content {
         order: 2;
     }
 
+    /* center blanks container  */
     #word-container {
         flex:  1 1 3em;
         justify-self: center;
     }
+
+    /* lower empty blanks font-size to handle larger words (prevent overflow) */
     #word-container span {
         font-size: 2rem;
         justify-self: center;
@@ -188,12 +197,14 @@ section h2, section h3 {
 }
 
 @media screen and (max-width: 645px) {
+    /* make game container width larger */
     section {
         width: 100%;
         margin: 0 1.5em;
     }
 }
 
+/* make blanks smaller for mobile devices */
 @media screen and (max-width: 450px) {
     #word-container span {
         font-size: 1.25rem;
